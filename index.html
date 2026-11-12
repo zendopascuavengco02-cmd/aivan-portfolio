@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aivan Jeff Primo | Personal Portfolio</title>
+    <link rel="stylesheet" href="aivan.css">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <a class="logo" href="#home">Aivan<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#personal">Personal Info</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#java">Java Project</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="home">
+        <div class="home-content">
+            <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+            <h1>Hello, I'm <span>Aivan Jeff Primo</span></h1>
+            <h2>First Year BSIT Student</h2>
+            <p>
+                I am an Information Technology student interested in computers,
+                programming, and technology. I am willing to learn new things
+                and continuously improve my coding skills.
+            </p>
+            <a href="#personal" class="button">Explore My Portfolio</a>
+        </div>
+        <div class="home-mark" aria-hidden="true">AJ</div>
+    </section>
+
+    <section id="personal" class="section">
+        <h2 class="section-title">Personal Information</h2>
+        <div class="card about-card">
+            <h3>About Me</h3>
+            <p>
+                My name is Aivan Jeff Primo. I am a Bachelor of Science in
+                Information Technology student. I enjoy learning about
+                computers, programming, and coding. My goal is to become
+                a successful programmer in the future.
+            </p>
+            <div class="info-list">
+                <p><strong>Name:</strong> Aivan Jeff Primo</p>
+                <p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
+                <p><strong>Year Level:</strong> First Year</p>
+                <p><strong>Section:</strong> Block C</p>
+                <p><strong>Email:</strong> aivan05@gmail.com</p>
+                <p><strong>Address:</strong> Calem, Guimba, Nueva Ecija</p>
+                <p><strong>Hobby:</strong> Watching Anime</p>
+            </div>
+            <div class="verse">
+                <h3>Favorite Bible Verse</h3>
+                <p>Isaiah 41:10</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section section-alt">
+        <h2 class="section-title">Educational Background</h2>
+        <div class="card-grid">
+            <article class="card">
+                <span class="card-label">COLLEGE</span>
+                <h3>Our Lady of the Sacred Heart College of Guimba</h3>
+                <p>Bachelor of Science in Information Technology</p>
+                <p>First Year College – Present</p>
+            </article>
+            <article class="card">
+                <span class="card-label">SENIOR HIGH SCHOOL</span>
+                <h3>Macatcatuit High School</h3>
+                <p>Strand: To be completed</p>
+                <p>Year Graduated: 2026</p>
+            </article>
+            <article class="card">
+                <span class="card-label">JUNIOR HIGH SCHOOL</span>
+                <h3>Macatcatuit High School</h3>
+                <p>Year Graduated: 2024</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2 class="section-title">My Skills and Interests</h2>
+        <div class="skills-grid">
+            <article class="skill-card"><h3>Playing Guitar</h3><p>Enjoying music and learning guitar.</p></article>
+            <article class="skill-card"><h3>Basketball</h3><p>Enjoying sports and physical activities.</p></article>
+            <article class="skill-card"><h3>Online Games</h3><p>Playing games during free time.</p></article>
+            <article class="skill-card"><h3>Problem Solving</h3><p>Finding solutions to different challenges.</p></article>
+            <article class="skill-card"><h3>Communication</h3><p>Sharing ideas and communicating with others.</p></article>
+            <article class="skill-card"><h3>Teamwork</h3><p>Working and cooperating with other people.</p></article>
+        </div>
+    </section>
+
+    <section id="java" class="section section-alt">
+        <h2 class="section-title">My Java Project</h2>
+        <div class="card java-card">
+            <span class="card-label">CC102 FINAL PERFORMANCE TASK</span>
+            <h3>Number Guessing Game</h3>
+            <p>
+                This Java console-based game generates a random number from
+                1 to 20. The player tries to guess the number. It demonstrates
+                the use of variables, Scanner, Random, conditional statements,
+                and a do-while loop.
+            </p>
+            <h3 class="code-heading">Java Source Code</h3>
+            <pre><code>import java.util.Scanner;
+import java.util.Random;
+
+public class NumberGuessingGame {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+
+        int secretNumber = random.nextInt(20) + 1;
+        int guess;
+        int attempts = 0;
+
+        System.out.println("==============================");
+        System.out.println("     NUMBER GUESSING GAME");
+        System.out.println("==============================");
+        System.out.println("Guess the number from 1 to 20!");
+
+        do {
+            System.out.print("\nEnter your guess: ");
+
+            if (input.hasNextInt()) {
+                guess = input.nextInt();
+                attempts++;
+
+                if (guess < 1 || guess > 20) {
+                    System.out.println(
+                        "Please enter a number from 1 to 20."
+                    );
+                } else if (guess < secretNumber) {
+                    System.out.println("Too low! Try again.");
+                } else if (guess > secretNumber) {
+                    System.out.println("Too high! Try again.");
+                } else {
+                    System.out.println(
+                        "Congratulations! You guessed it!"
+                    );
+                    System.out.println(
+                        "Number of attempts: " + attempts
+                    );
+                }
+            } else {
+                System.out.println(
+                    "Invalid input! Enter a number."
+                );
+                input.next();
+                guess = 0;
+            }
+
+        } while (guess != secretNumber);
+
+        System.out.println("\nThank you for playing!");
+        input.close();
+    }
+}</code></pre>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Aivan Jeff Primo | Personal Portfolio</p>
+    <p>BS Information Technology Student</p>
+</footer>
+</body>
+</html>
